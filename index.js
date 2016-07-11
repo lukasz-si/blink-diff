@@ -128,6 +128,8 @@ var assert = require('assert'),
  */
 function BlinkDiff (options) {
 
+	this._imageName = options.imageName;
+
 	this._imageA = options.imageA;
 	this._imageAPath = options.imageAPath;
 	assert.ok(options.imageAPath || options.imageA, "Image A not given.");
@@ -1175,7 +1177,8 @@ BlinkDiff.prototype = {
 			differences: undefined,
 			dimension: undefined,
 			width: undefined,
-			height: undefined
+			height: undefined,
+			imageName: this._imageName
 		};
 
 		// Get some data needed for comparison
